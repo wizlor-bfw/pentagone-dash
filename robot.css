@@ -1,0 +1,39 @@
+/* v20 · ROBOT ANALYSTE J — section sous le globe (le globe n'est pas modifié) */
+.grid{grid-template-areas:"pf ch ch st" "net net net net" "rb rb rb rb" "roi rc rc an" "lg lg lg lg" "gr gr ag ag" "of of of cf" "ru ru ru cf"}
+@media (max-width:900px){.grid{grid-template-areas:"pf" "ch" "st" "net" "rb" "roi" "rc" "an" "lg" "gr" "ag" "of" "cf" "ru"}}
+.rb{grid-area:rb}
+.rbw{position:relative;overflow:hidden;border-radius:2px;background:radial-gradient(120% 80% at 50% 100%,#1a0b24 0%,#08040a 70%);padding:10px 8px 8px}
+.rbw canvas.rbfx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:3}
+.rbmons{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.rbm{position:relative;border:1px solid #2f5f5a;border-radius:4px;background:#03110f;box-shadow:0 0 14px #00ffcc22,inset 0 0 22px #00ffcc10;height:150px;overflow:hidden;font:10.5px/1.45 JBM,monospace;color:#bdf7ec}
+.rbm:nth-child(4),.rbm:nth-child(5){grid-column:span 1}
+.rbm .h{display:flex;justify-content:space-between;padding:3px 6px;background:#00ffcc14;color:#00ffcc;font-weight:700;letter-spacing:.12em;font-size:9.5px;border-bottom:1px solid #00ffcc33}
+.rbm .b{padding:4px 6px;height:calc(100% - 20px);overflow:hidden;position:relative}
+.rbm::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,#0000 0 2px,#00000038 2px 3px);pointer-events:none}
+.rbm::before{content:"";position:absolute;left:0;right:0;height:30%;top:-30%;background:linear-gradient(#00ffcc00,#00ffcc14,#00ffcc00);animation:rbscan 4.5s linear infinite;pointer-events:none;z-index:1}
+.rbm.pk{border-color:#6b2a4a;box-shadow:0 0 14px #ff2a8522;color:#ffd0e2}.rbm.pk .h{background:#ff2a8514;color:#ff2a85;border-color:#ff2a8533}
+@keyframes rbscan{to{top:100%}}
+.rbroll{animation:rbroll 28s linear infinite}.rbm:hover .rbroll{animation-play-state:paused}
+@keyframes rbroll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+.rbp{margin-bottom:5px;border-left:2px solid #00ffcc55;padding-left:5px}.rbp i{font-style:normal;color:#00ffcc}.rbp s{text-decoration:none;color:#6f8f8a}
+.rbs{display:flex;gap:5px;white-space:nowrap}.rbs .ok{color:#00ffcc}.rbs .ko{color:#ff2a85}.rbs .r{color:#8a7f95;overflow:hidden;text-overflow:ellipsis}
+.rbbar{display:flex;align-items:center;gap:5px;margin:3px 0}.rbbar span{width:64px;color:#9fd}.rbbar div{flex:1;height:7px;background:#0d2522;border-radius:3px;overflow:hidden}.rbbar div b{display:block;height:100%;background:linear-gradient(90deg,#00ffcc,#7affe6);transition:width 1s}
+.rbbar em{font-style:normal;width:26px;text-align:right}
+.rbbig{font:800 22px JBM,monospace;color:#00ffcc;text-shadow:0 0 10px #00ffcc66}
+.rbstage{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:8px;margin-top:6px}
+.rbstage svg.robot{width:min(260px,58%);height:auto;display:block}
+.rbnode{flex:0 0 auto;width:116px;height:116px;margin:0 8px 18px 0;position:relative;display:grid;place-items:center;font:800 11px JBM,monospace;letter-spacing:.16em;color:#ff2a85;text-shadow:0 0 8px #ff2a85}
+.rbnode svg{position:absolute;inset:0;width:100%;height:100%;animation:rbspin 18s linear infinite}
+.rbnode .pulse{position:absolute;inset:18px;border-radius:50%;border:1px solid #ff2a85;animation:rbpulse 2.2s ease-out infinite}
+@keyframes rbspin{to{transform:rotate(360deg)}}@keyframes rbpulse{from{transform:scale(.6);opacity:1}to{transform:scale(1.35);opacity:0}}
+.robot .head{animation:rbhead 6s ease-in-out infinite;transform-origin:130px 120px}
+@keyframes rbhead{0%,100%{transform:rotate(-7deg)}30%{transform:rotate(3deg)}55%{transform:rotate(8deg)}80%{transform:rotate(-2deg)}}
+.robot .eye{animation:rbblink 5s infinite;transform-origin:center;transform-box:fill-box}
+@keyframes rbblink{0%,94%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+.robot .armL{animation:rbtype .32s ease-in-out infinite alternate;transform-origin:96px 150px}.robot .armR{animation:rbtype .32s ease-in-out .16s infinite alternate;transform-origin:164px 150px}
+@keyframes rbtype{to{transform:translateY(3px)}}
+.robot .ant{animation:rbant 1.1s ease-in-out infinite alternate}@keyframes rbant{to{fill:#ff2a85}}
+.rbft{position:relative;z-index:2;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;font:9.5px JBM,monospace;letter-spacing:.12em;color:#827b8a;margin-top:4px}
+.rbft b{color:#ffcc33;font-weight:700}
+@media (max-width:620px){.rb h2 em{display:none}.rbmons{grid-template-columns:repeat(2,minmax(0,1fr))}.rbm:nth-child(1){grid-column:span 2}.rbm{height:136px;font-size:10px}.rbnode{width:92px;height:92px;font-size:9.5px}}
+@media (prefers-reduced-motion:reduce){.rbm::before,.rbroll,.robot *,.rbnode svg,.rbnode .pulse{animation:none!important}}

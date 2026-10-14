@@ -1,0 +1,34 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08040A"><link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png"><title>PENTAGONE · SECOND BRAIN</title>
+<link rel="stylesheet" href="brain.css"></head><body>
+<header class="top">
+ <div class="brand"><i class="blink"></i>PENTAGONE <s>·</s> SECOND BRAIN <s>·</s> <b>LIVE</b><span class="paper">PAPER</span></div>
+ <div class="kv"><span>T+<b id="tplus">00:00:00</b></span><span>MAJ<b id="upd">—</b></span><span>NŒUDS<b id="tot">0</b></span><a class="nav" href="../">← DASH</a></div>
+</header>
+<main class="grid">
+ <section class="col left">
+  <div class="p"><h2>SYSTEM PROMPT <em>rules.md</em></h2>
+   <pre class="sys">&gt; Tu es le second cerveau d'Enigma.
+&gt; Tu ranges, relies et résumes ce que font ses IA.
+&gt; Tu prépares, tu n'envoies jamais seul.</pre>
+   <ol id="rules" class="rules"></ol></div>
+  <div class="p"><h2>RÉGIONS <em>remplissage</em></h2><div id="regions"></div>
+   <div class="totbar"><span>TOTAL</span><div class="bar"><i id="totfill"></i></div><b id="totpct">0%</b></div>
+   <p class="mu tiny" id="note"></p></div>
+  <div class="p"><h2>AGENTS <em>nœuds</em></h2><div id="agents" class="agents"></div></div>
+ </section>
+ <section class="col mid">
+  <div class="p term"><h2>OPS <em>en cours</em><span class="r" id="opsn"></span></h2><div id="ops"></div></div>
+  <div class="p brainp"><canvas id="gl"></canvas><canvas id="cv"></canvas><div id="since" class="since"></div><div class="legend" id="legend"></div><div class="deco">forme 3D &amp; position des points : décoratives</div></div>
+  <div class="p"><h2>~/brain <em>tree</em></h2><pre id="tree" class="tree"></pre></div>
+ </section>
+ <section class="col right">
+  <div class="p"><h2>STATS</h2><div class="mini" id="stats"></div></div>
+  <div class="p"><div class="tabs" id="tabs"></div><pre id="editor" class="editor"></pre></div>
+  <div class="p wait"><h2>WAITING YOUR YES</h2><div id="waiting"></div></div>
+  <div class="p"><h2>tail -f log.md</h2><div id="log" class="log"></div></div>
+ </section>
+</main>
+<script src="brain.js"></script></body></html>
